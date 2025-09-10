@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Habitat Designer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🚀 Space Habitat Designer</h1>
+            <p>Design and explore space habitat layouts for crew missions</p>
+            <div style="margin-top: 0.75rem;">
+                <button id="theme-toggle" class="btn btn-secondary" aria-label="Toggle theme">🌙 Dark</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <div class="panel-section">
+                    <h3>Habitat Shape</h3>
+                    <div class="shape-controls">
+                        <label for="shape-type">Shape Type:</label>
+                        <select id="shape-type">
+                            <option value="cylinder">Cylinder</option>
+                            <option value="sphere">Sphere</option>
+                            <option value="cube">Cube</option>
+                            <option value="torus">Torus</option>
+                        </select>
+                        
+                        <label for="radius">Radius (m):</label>
+                        <input type="range" id="radius" min="5" max="20" value="10" step="0.5">
+                        <span id="radius-value">10</span>
+                        
+                        <label for="height">Height (m):</label>
+                        <input type="range" id="height" min="5" max="30" value="15" step="0.5">
+                        <span id="height-value">15</span>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3>Systems & Layout</h3>
+                    <div class="systems-controls">
+                        <div class="system-item">
+                            <input type="checkbox" id="life-support" checked>
+                            <label for="life-support">Life Support</label>
+                        </div>
+                        <div class="system-item">
+                            <input type="checkbox" id="power" checked>
+                            <label for="power">Power Systems</label>
+                        </div>
+                        <div class="system-item">
+                            <input type="checkbox" id="waste" checked>
+                            <label for="waste">Waste Management</label>
+                        </div>
+                        <div class="system-item">
+                            <input type="checkbox" id="thermal" checked>
+                            <label for="thermal">Thermal Control</label>
+                        </div>
+                        <div class="system-item">
+                            <input type="checkbox" id="communications" checked>
+                            <label for="communications">Communications</label>
+                        </div>
+                        <div class="system-item">
+                            <input type="checkbox" id="medical" checked>
+                            <label for="medical">Medical Care</label>
+                        </div>
+                        <div class="system-item">
+                            <input type="checkbox" id="sleep" checked>
+                            <label for="sleep">Sleep Quarters</label>
+                        </div>
+                        <div class="system-item">
+                            <input type="checkbox" id="exercise" checked>
+                            <label for="exercise">Exercise Area</label>
+                        </div>
+                        <div class="system-item">
+                            <input type="checkbox" id="food" checked>
+                            <label for="food">Food Storage & Prep</label>
+                        </div>
+                        <div class="system-item">
+                            <input type="checkbox" id="stowage" checked>
+                            <label for="stowage">Stowage</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3>Layout Options</h3>
+                    <div class="layout-controls">
+                        <button id="auto-layout" class="btn btn-primary">Auto Layout</button>
+                        <button id="clear-layout" class="btn btn-secondary">Clear Layout</button>
+                        <button id="save-layout" class="btn btn-success">Save Layout</button>
+                        <button id="load-layout" class="btn btn-info">Load Layout</button>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3>Habitat Info</h3>
+                    <div class="habitat-info">
+                        <p><strong>Volume:</strong> <span id="volume-display">0</span> m³</p>
+                        <p><strong>Surface Area:</strong> <span id="surface-display">0</span> m²</p>
+                        <p><strong>Crew Capacity:</strong> <span id="crew-display">0</span> people</p>
+                        <p><strong>Systems Installed:</strong> <span id="systems-count">0</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3D Visualization -->
+            <div class="visualization-container">
+                <div id="canvas-container">
+                    <canvas id="habitat-canvas"></canvas>
+                </div>
+                <div class="view-controls">
+                    <button id="top-view" class="view-btn">Top</button>
+                    <button id="side-view" class="view-btn">Side</button>
+                    <button id="front-view" class="view-btn">Front</button>
+                    <button id="reset-view" class="view-btn">Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Space Habitat Designer - Explore the future of space living</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
