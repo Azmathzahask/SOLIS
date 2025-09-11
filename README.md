@@ -1,88 +1,151 @@
 # System for Orbital Living and Integrated Support - SOLIS
 
-This directory contains the modularized JavaScript code for the Space Habitat Designer application. The original monolithic `script.js` file has been divided into logical modules for better maintainability and organization.
+A visual tool for designing and exploring space habitat layouts for crew missions. This interactive 3D application allows users to define habitat shapes, volumes, and explore possible layout options for critical space systems.
 
-## Module Structure
+## Features
 
-### Core Module (`core.js`)
-- Main `SpaceHabitatDesigner` class
-- Application initialization and coordination
-- Animation loop management
+### 🏗️ Habitat Shape Definition
+- **Multiple Shapes**: Choose from cylinder, sphere, cube, or torus geometries
+- **Adjustable Dimensions**: Modify radius and height with real-time updates
+- **3D Visualization**: Interactive 3D rendering with wireframe overlay
+- **Volume Calculations**: Automatic calculation of habitat volume and surface area
 
-### Scene Module (`scene.js`)
-- Three.js scene setup and management
-- Camera controls and positioning
-- Lighting configuration (ambient, directional, point lights)
-- Grid helper management
-- View controls (top, side, front, reset)
+### 🔧 Critical Systems Integration
+- **Life Support Systems**: Oxygen generation, CO2 removal, air filtration
+- **Power Systems**: Solar panels, batteries, power distribution
+- **Waste Management**: Recycling systems, waste processing
+- **Thermal Control**: Heating, cooling, temperature regulation
+- **Communications**: Antennas, data transmission systems
+- **Medical Care**: Medical equipment, emergency facilities
+- **Sleep Quarters**: Crew sleeping accommodations
+- **Exercise Area**: Fitness equipment, recreation space
+- **Food Storage & Preparation**: Galley, food storage, preparation areas
+- **Stowage**: Equipment storage, spare parts, supplies
 
-### Habitat Module (`habitat.js`)
-- Habitat shape creation and management
-- Volume and surface area calculations
-- View mode switching (solid, wire, outline)
-- Outline rendering
+### 🎨 Layout Exploration
+- **Auto Layout**: Intelligent automatic placement of systems
+- **Interactive 3D View**: Rotate, zoom, and pan around the habitat
+- **Multiple Viewpoints**: Top, side, front, and reset camera positions
+- **System Visualization**: Color-coded systems with icons and labels
+- **Real-time Updates**: Instant feedback on layout changes
 
-### Systems Module (`systems.js`)
-- Life support systems management
-- System creation with icons and colors
-- Auto-layout functionality
-- System counting and display
+### 💾 Save & Load Functionality
+- **Save Layouts**: Export habitat configurations as JSON files
+- **Load Layouts**: Import previously saved designs
+- **Keyboard Shortcuts**: Quick access to common functions
 
-### Floors Module (`floors.js`)
-- Floor creation and management
-- Floor partitioning and room layout
-- Floor selection and focus management
-- Floor button UI generation
+## Getting Started
 
-### Furniture Module (`furniture.js`)
-- Object placement and management
-- Furniture prefab creation
-- Gravity simulation for placed objects
-- Vibrant color toggling
-- Object selection and manipulation
+### Prerequisites
+- Modern web browser with WebGL support
+- No additional software installation required
 
-### Planner Module (`planner.js`)
-- Floor planning mode management
-- Planner view controls
-- Object rotation and deletion
-- Snap-to-grid functionality
+### Installation
+1. Download or clone this repository
+2. Open `index.html` in your web browser
+3. The application will load automatically
 
-### UI Module (`ui.js`)
-- Event listener setup
-- Questionnaire modal management
-- Layout save/load functionality
-- Workspace clearing
-- AI material prediction
+### Usage
 
-### Utils Module (`utils.js`)
-- Theme management
-- Color palette application
-- Helper functions
+#### Basic Habitat Design
+1. **Select Shape**: Choose from the dropdown menu (cylinder, sphere, cube, torus)
+2. **Adjust Dimensions**: Use the sliders to modify radius and height
+3. **View Changes**: Watch the 3D visualization update in real-time
 
-## Dependencies
+#### System Layout
+1. **Enable Systems**: Check the boxes for systems you want to include
+2. **Auto Layout**: Click "Auto Layout" to automatically position systems
+3. **Manual Adjustment**: Use mouse to rotate and zoom around the habitat
+4. **View Controls**: Use the view buttons for different perspectives
 
-The modules are loaded in the following order to ensure proper dependency resolution:
+#### Save & Load
+1. **Save Layout**: Click "Save Layout" or press Ctrl+S to export your design
+2. **Load Layout**: Click "Load Layout" or press Ctrl+L to import a saved design
 
-1. `utils.js` - Base utilities
-2. `scene.js` - Three.js scene setup
-3. `habitat.js` - Habitat management
-4. `systems.js` - Systems management
-5. `floors.js` - Floor management
-6. `furniture.js` - Furniture management
-7. `planner.js` - Planner functionality
-8. `ui.js` - UI management
-9. `core.js` - Main application class
+### Keyboard Shortcuts
+- `Ctrl+A`: Auto Layout
+- `Ctrl+C`: Clear Layout
+- `Ctrl+S`: Save Layout
+- `Ctrl+L`: Load Layout
 
-## Benefits of Modularization
+## Technical Details
 
-- **Maintainability**: Each module has a single responsibility
-- **Readability**: Code is organized by functionality
-- **Reusability**: Modules can be easily reused or modified
-- **Debugging**: Easier to locate and fix issues
-- **Collaboration**: Multiple developers can work on different modules
-- **Testing**: Individual modules can be tested in isolation
+### Technologies Used
+- **HTML5**: Structure and layout
+- **CSS3**: Modern styling with gradients and animations
+- **JavaScript (ES6+)**: Application logic and interactivity
+- **Three.js**: 3D graphics and visualization
+- **WebGL**: Hardware-accelerated 3D rendering
 
-## Usage
+### Architecture
+- **Object-Oriented Design**: Modular class-based structure
+- **Event-Driven**: Responsive user interface
+- **Real-time Rendering**: Smooth 3D visualization
+- **Responsive Design**: Works on desktop and mobile devices
 
-The modules are automatically loaded by the HTML file in the correct order. The main application is initialized in the HTML file's script section, which creates a new instance of `SpaceHabitatDesigner`.
+### Habitat Calculations
+- **Volume**: Calculated based on geometric formulas for each shape
+- **Surface Area**: Determined for structural and thermal analysis
+- **Crew Capacity**: Estimated at 20m³ per person
+- **System Placement**: Optimized for efficient space utilization
+
+## Space Habitat Considerations
+
+### Critical Functions Supported
+- **Waste Management**: Essential for long-duration missions
+- **Thermal Control**: Maintains habitable temperatures
+- **Life Support**: Provides breathable air and water
+- **Communications**: Enables contact with Earth and other spacecraft
+- **Power**: Generates and distributes electrical energy
+- **Stowage**: Stores equipment, supplies, and spare parts
+- **Food Storage & Preparation**: Sustains crew nutrition
+- **Medical Care**: Addresses health emergencies
+- **Sleep**: Provides rest and privacy for crew
+- **Exercise**: Maintains physical fitness in microgravity
+
+### Design Principles
+- **Modularity**: Systems can be easily added or removed
+- **Efficiency**: Optimized use of available space
+- **Safety**: Systems positioned for easy access and maintenance
+- **Comfort**: Consideration for crew well-being and productivity
+
+## Future Enhancements
+
+### Planned Features
+- **Advanced Layout Algorithms**: More sophisticated system placement
+- **Material Selection**: Different construction materials and properties
+- **Environmental Factors**: Radiation shielding, micrometeoroid protection
+- **Crew Interaction**: Simulate crew movement and workflow
+- **Performance Analysis**: Structural and thermal analysis tools
+- **Export Options**: 3D model export for CAD software
+- **Collaborative Design**: Multi-user editing capabilities
+
+### Technical Improvements
+- **Advanced Lighting**: Realistic space lighting conditions
+- **Particle Effects**: Visual representation of air flow and systems
+- **Animation**: System operation animations
+- **VR Support**: Virtual reality interface for immersive design
+
+## Contributing
+
+This project is open for contributions! Areas for improvement include:
+- Additional habitat shapes and geometries
+- More sophisticated layout algorithms
+- Enhanced 3D visualization features
+- Performance optimizations
+- Mobile interface improvements
+
+## License
+
+This project is open source and available under the MIT License.
+
+## Acknowledgments
+
+- NASA for inspiration and technical guidance
+- Three.js community for 3D graphics framework
+- Space exploration community for feedback and suggestions
+
+---
+
+**Explore the future of space living with the Space Habitat Designer!** 🚀
 
