@@ -1,4 +1,4 @@
-# Space Habitat Designer - Modular Architecture
+# System for Orbital Living and Integrated Support - SOLIS
 
 This directory contains the modularized JavaScript code for the Space Habitat Designer application. The original monolithic `script.js` file has been divided into logical modules for better maintainability and organization.
 
@@ -85,3 +85,4 @@ The modules are loaded in the following order to ensure proper dependency resolu
 ## Usage
 
 The modules are automatically loaded by the HTML file in the correct order. The main application is initialized in the HTML file's script section, which creates a new instance of `SpaceHabitatDesigner`.
+
